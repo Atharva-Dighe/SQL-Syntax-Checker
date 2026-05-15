@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SQL Query Validator</title>
+  <link rel="stylesheet" href="/static/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/theme/dracula.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>SQL Query Validator</h1>
+      <p class="subtitle">Validate your SQL queries with real-time feedback</p>
+    </div>
+
+    <div class="main-content">
+      <div class="editor-container">
+        <div class="editor-header">
+          <span>Enter your SQL query</span>
+          <button id="clearBtn" class="clear-btn">Clear</button>
+        </div>
+        <textarea id="sqlEditor"></textarea>
+        <button id="validateBtn" class="validate-btn" data-tooltip="Ctrl/Cmd + Enter">Validate Query</button>
+      </div>
+
+      <div class="result-container">
+        <div class="result-header">
+          <span>Validation Results</span>
+          <a href="https://docs.google.com/spreadsheets/d/19e58dtGT-r5fDwlkV1QiTAFaxaiwCo0My7lH4aFfCDo/edit?userstoinvite=ankushdigital9%40gmail.com&sharingaction=manageaccess&role=writer&gid=0#gid=0" target="_blank"><div class="status-indicator"></div></a>
+        </div>
+        <div id="resultArea" class="result-content">
+          <div class="placeholder-text">
+            Results will appear here after validation
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="examples-section">
+    
+      <div class="example-buttons">
+        <button onclick="loadExample('select')">SELECT</button>
+        <button onclick="loadExample('createD')">CREATE DB</button>
+        <button onclick="loadExample('createT')">CREATE TABLE</button>
+        <button onclick="loadExample('insert')">INSERT</button>
+        <button onclick="loadExample('delete')">DELETE</button>
+        <button onclick="loadExample('drop')">DROP</button>
+        <button onclick="loadExample('update')">UPDATE</button>
+        <button onclick="loadExample('alter')">ALTER</button>
+        <button onclick="loadExample('trunc')">TRUNCATE</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/mode/sql/sql.min.js"></script>
+  <script src="/static/script.js"></script>
+</body>
+</html>

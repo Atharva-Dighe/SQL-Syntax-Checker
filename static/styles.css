@@ -1,0 +1,490 @@
+:root {
+    --primary-color: #0d0d0d; /* Deep black for strong contrast */
+    --secondary-color: #1a1a1a; /* Slightly lighter black for depth */
+    --accent-color: #f4c406; /* Hufflepuff yellow */
+    --accent-hover: #c6a008; /* Darker golden yellow for hover */
+    --text-color: #f9f9f1; /* Warm beige for readability */
+    --error-color: #9b0b0b; /* Dark red for errors */
+    --success-color: #358739; /* Deep green (natural and balanced) */
+    --warning-color: #ff8f00; /* A warmer orange for warnings */
+    --gradient-start: #a48f18; /* Rich gold for highlights */
+    --gradient-end: #ffcc33; /* Slightly muted yellow for a smooth gradient */
+}
+
+body::before {
+    content: "";
+    position: absolute;;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    pointer-events: none;
+    background: url('logo-removebg-preview.png') no-repeat center/contain;
+    width: 150px;
+    height: 150px;
+    opacity: 1;
+    animation: moveToCorner 5s forwards ease-in-out, dance 2s infinite 2s ease-in-out, sparkle 1.5s infinite alternate ease-in-out;
+}
+
+@keyframes moveToCorner {
+    0% {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+    100% {
+        top: 10px;
+        left: 10px;
+        transform: translate(0, 0) scale(1);
+        opacity: 1;
+        z-index: 10; /* Bring it forward */
+    }
+}
+
+@keyframes dance {
+    0% { transform: translate(0, 0) rotate(0deg) scale(1); }
+    25% { transform: translate(5px, -5px) rotate(5deg) scale(1.05); }
+    50% { transform: translate(-5px, 5px) rotate(-5deg) scale(1); }
+    75% { transform: translate(5px, -5px) rotate(5deg) scale(1.05); }
+    100% { transform: translate(0, 0) rotate(0deg) scale(1); }
+}
+
+@keyframes sparkle {
+    0% {
+        filter: brightness(0.5);
+       
+    }
+    50% {
+        filter: brightness(1.5);
+       
+    }
+    100% {
+        filter: brightness(1.5);
+        
+    }
+}
+
+
+@keyframes dance {
+    0% { transform: translate(0, 0) rotate(0deg) scale(1); }
+    25% { transform: translate(5px, -5px) rotate(5deg) scale(1.05); }
+    50% { transform: translate(-5px, 5px) rotate(-5deg) scale(1); }
+    75% { transform: translate(5px, -5px) rotate(5deg) scale(1.05); }
+    100% { transform: translate(0, 0) rotate(0deg) scale(1); }
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+    color: var(--text-color);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Parisienne&display=swap');
+
+.header {
+    text-align: center;
+    margin-bottom: 2rem;
+    letter-spacing: 1.5px;
+    font-family: 'Great Vibes', cursive; /* Elegant cursive font */
+
+    font-weight: 600;
+    color: #FFD700; /* Hufflepuff gold */
+  
+    text-transform: capitalize; /* Keeps natural cursive flow */
+    animation: fadeInDown 1s ease;
+}
+
+
+
+/* Mystical Glow Animation */
+@keyframes glowEffect {
+    0% { text-shadow: 3px 3px 8px rgba(255, 215, 0, 0.8); }
+    100% { text-shadow: 4px 4px 12px rgba(255, 215, 0, 1); }
+}
+
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600;900&family=Great+Vibes&display=swap');
+
+.header h1 {
+    font-size: 3.5rem; /* Slightly larger for impact */
+    font-weight: 400; /* Extra bold */
+    font-family: 'Great Vibes', cursive;  /* Classic elegance */
+     /* Elegant & luxurious font */
+    background: linear-gradient(to right, var(--gradient-start), var(--gradient-end));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-shadow: 2px 2px 10px rgba(255, 255, 255, 0.3); /* Soft glow effect */
+    margin-bottom: 0.5rem;
+    letter-spacing: 1px; /* More spacing for a refined look */
+    text-transform: uppercase; /* Adds a bold, majestic look */
+}
+
+
+.subtitle {
+    color: #8890b5;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.main-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    animation: fadeInUp 0.8s ease;
+}
+
+.editor-container, .result-container {
+    background: rgba(26, 27, 46, 0.8);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: 1.5rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+.editor-header, .result-header {
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Great Vibes', cursive;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.editor-header span, .result-header span {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--accent-color);
+}
+
+.CodeMirror {
+    height: 350px !important;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    padding: 1rem;
+    background: rgba(20, 21, 38, 0.7) !important;
+}
+
+.validate-btn {
+    background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: 'Great Vibes', cursive;
+    margin-top: 1rem;
+    width: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.validate-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(230, 238, 220, 0.3);
+}
+
+.validate-btn:active {
+    transform: translateY(1px);
+    
+}
+
+.clear-btn {
+    background: transparent;
+    color: #8890b5;
+    border: 2px solid rgba(225, 236, 13, 0.3);
+    padding: 0.5rem 1.2rem;
+    border-radius: 8px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.clear-btn:hover {
+    color: var(--accent-color);
+    border-color: var(--accent-color);
+    background: rgba(224, 202, 218, 0.1);
+}
+
+    #resultArea {
+        background-color: black;
+        color: lime;
+        padding: 20px;
+        font-family: 'Courier New', monospace;
+        font-size: 18px;
+        height: 100px;
+        overflow: hidden; /* No scrolling, always latest message */
+        border: 2px solid rgba(255, 255, 0, 0.86); /* Adjusted for a bright neon yellow */
+        box-shadow: 0 0 8px rgba(255, 255, 0, 1); /* Adds a neon glow effect */
+
+        border-radius: 5px;
+    }
+    
+    .cursor {
+        animation: blink 1s infinite;
+    }
+
+    @keyframes blink {
+        50% { opacity: 0; }
+    }
+
+
+.result-content {
+    min-height: 350px;
+    background: rgba(20, 21, 38, 0.7);
+    border-radius: 12px;
+    padding: 1.5rem;
+    overflow-y: auto;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    font-family: 'Great Vibes', cursive;
+    white-space: pre-wrap;
+    line-height: 1.5;
+    text-align: center; /* Ensures text inside is centered */
+}
+
+
+.status-indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #8890b5;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.status-indicator::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+}
+
+.status-indicator.success {
+    background: var(--success-color);
+    box-shadow: 0 0 12px rgba(16, 185, 129, 0.4);
+}
+
+.status-indicator.error {
+    background: var(--error-color);
+    box-shadow: 0 0 12px rgba(239, 68, 68, 0.4);
+}
+
+.placeholder-text {
+    color: #8890b5;
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 1.1rem;
+}
+
+.examples-section {
+    text-align: center;
+    margin-top: 1rem;
+    font-family: 'Great Vibes', cursive;
+    animation: fadeInUp 1s ease;
+}
+
+.examples-section h3 {
+    margin-bottom: 1rem;
+    color: var(--accent-color);
+    font-size: 1rem;
+}
+
+.example-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.example-buttons button {
+    background: rgba(26, 27, 46, 0.8);
+    color: var(--text-color);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 0.8rem 1.5rem;
+    border-radius: 10px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.example-buttons button:hover {
+    background: var(--accent-color);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(139, 92, 246, 0.2);
+}
+
+.error-message {
+    color: var(--error-color);
+    background: rgba(239, 68, 68, 0.1);
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 0.8rem;
+    border-left: 4px solid var(--error-color);
+}
+
+.success-message {
+    color: var(--success-color);
+    background: rgba(16, 185, 129, 0.1);
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 0.8rem;
+    border-left: 4px solid var(--success-color);
+}
+
+.suggestion {
+    color: var(--warning-color);
+    background: rgba(245, 158, 11, 0.1);
+    padding: 1rem;
+    border-radius: 8px;
+    margin-top: 1rem;
+    border-left: 4px solid var(--warning-color);
+}
+
+/* Animations */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        opacity: 0.8;
+    }
+    70% {
+        transform: scale(2);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 0;
+    }
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(20, 21, 38, 0.7);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--accent-color);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--accent-hover);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .main-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .container {
+        padding: 1rem;
+    }
+    
+    .header h1 {
+        font-size: 2.5rem;
+    }
+}
+
+/* Loading Animation */
+.loading {
+    position: relative;
+}
+
+.loading::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+    animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+/* Tooltip Styles */
+[data-tooltip] {
+    position: relative;
+}
+
+[data-tooltip]:before {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 0.5rem 1rem;
+    background: rgba(0,0,0,0.8);
+    color: white;
+    border-radius: 6px;
+    font-size: 0.875rem;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+[data-tooltip]:hover:before {
+    opacity: 1;
+    visibility: visible;
+}
